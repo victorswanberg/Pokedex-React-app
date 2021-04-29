@@ -53,6 +53,37 @@ const App = () => {
           placeholder="What is that pokemon?"
           />
         </label>
+        {pokemonData.map((data) => {
+          return(
+            <div className="container">
+              <img src={data.sprites["front_default"]} />
+              <div className="divTable">
+                <div className="divTableBody">
+                  <div className="divTableRow">
+                    <div className="divTableCell">Type</div>
+                    <div className="divTableCell">{pokemonType}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Height</div>
+                    <div className="divTableCell">{" "}
+                    {Math.round(data.height + 3.9)}"
+                    </div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Weight</div>
+                    <div className="divTableCell">{" "}
+                    {Math.round(data.height / 4.3)} lbs
+                    </div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Battles</div>
+                    <div className="divTableCell">{data.game_indices.length}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </form>
     </div>
   );
