@@ -9,10 +9,12 @@ const App = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonType, setPokemonType] = useState("");
 
+  // Need to convert the input data string to lowercase.
   const handleChange = (e) => {
     setPokemon(e.target.value.toLowerCase())
   };
 
+  //Submit button handler
   const handleSubmit = (e) => {
     e.preventDefault();
     getPokemon()
@@ -28,11 +30,13 @@ const App = () => {
       toArray.push(res.data);
       setPokemonType(res.data.types[0].type.name);
       setPokemonData(toArray);
-      console.log(res)
+      //console.log(res)
+
     } catch (e) {
       console.log(e)
     }
   };
+  console.log(pokemonData);
 
   // useEffect(() => {
   //   getPokemon();
@@ -42,10 +46,12 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <label
+        <label>
+          <input
           type="text"
           onChange={handleChange}
-          placeholder="What is that pokemon?">
+          placeholder="What is that pokemon?"
+          />
         </label>
       </form>
     </div>
