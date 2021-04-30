@@ -34,14 +34,10 @@ const App = () => {
 
     } catch (e) {
       console.log(e)
+      alert("This is not a valid poke'mon")
     }
   };
   console.log(pokemonData);
-
-  // useEffect(() => {
-  //   getPokemon();
-  // }, [])
-
 
   return (
     <div className="App">
@@ -50,13 +46,14 @@ const App = () => {
           <input
           type="text"
           onChange={handleChange}
-          placeholder="What is that pokemon?"
+          placeholder="Who's that pokemon!??"
           />
         </label>
+      </form>  
         {pokemonData.map((data) => {
           return(
             <div className="container">
-              <img src={data.sprites["front_default"]} />
+              <img src={data.sprites["front_default"]} alt={data.sprites}/>
               <div className="divTable">
                 <div className="divTableBody">
                   <div className="divTableRow">
@@ -82,9 +79,8 @@ const App = () => {
                 </div>
               </div>
             </div>
-          )
-        }
-      </form>
+          );
+        })}
     </div>
   );
 }
