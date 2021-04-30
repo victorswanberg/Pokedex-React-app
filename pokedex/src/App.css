@@ -2,3 +2,65 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  opacity: 0.9;
+  background-color: whitesmoke;
+  justify-content: center;
+  
+}
+
+img {
+  height: 15em;
+}
+
+input {
+  box-sizing: content-box;
+  font-size: 2rem;
+  padding: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+
+/* Resources: https://divtable.com/ */
+.divTable {
+  display: table;
+  width: 20em;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.divTableRow {
+  display: table-row;
+}
+
+.divTableHeading {
+  background-color: red;
+  display: table-header-group;
+  font-weight: bold;
+} 
+
+.divTableCell {
+  background-color: aqua;
+  display: table-header-group;
+  padding: 5px 15px;
+}
+
+.divTableFoot {
+  background-color: aqua;
+  display: table-footer-group;
+  font-weight: bold;
+}
+
+.divTableBody {
+  display: table-row-group;
+}
+
+.divTableCell:nth-child(odd) {
+  background-color: aquamarine;
+}
+
+
+
