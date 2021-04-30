@@ -41,47 +41,51 @@ const App = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-          type="text"
-          onChange={handleChange}
-          placeholder="Who's that pokemon!??"
-          />
-        </label>
-      </form>  
-        {pokemonData.map((data) => {
-          return(
-            <div className="container">
-              <img src={data.sprites["front_default"]} alt={data.sprites}/>
-              <div className="divTable">
-                <div className="divTableBody">
-                  <div className="divTableRow">
-                    <div className="divTableCell">Type</div>
-                    <div className="divTableCell">{pokemonType}</div>
-                  </div>
-                  <div className="divTableRow">
-                    <div className="divTableCell">Height</div>
-                    <div className="divTableCell">{" "}
-                    {Math.round(data.height + 3.9)}"
+      
+        <form onSubmit={handleSubmit}>
+          <label>
+            <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Who's that pokemon!??"
+            />
+          </label>
+        </form>  
+          {pokemonData.map((data) => {
+            return(
+              <div className="container">
+                <img src={data.sprites["front_default"]} alt={data.sprites}/>
+                <div className="divTable">
+                  <div className="divTableBody">
+                    <div className="divTableRow">
+                      <div className="divTableCell">Type</div>
+                      <div className="divTableCell">{pokemonType}</div>
                     </div>
-                  </div>
-                  <div className="divTableRow">
-                    <div className="divTableCell">Weight</div>
-                    <div className="divTableCell">{" "}
-                    {Math.round(data.height / 4.3)} lbs
+                    <div className="divTableRow">
+                      <div className="divTableCell">Height</div>
+                      <div className="divTableCell">{" "}
+                      {/* Reference the poke api docs because height is converted in an odd way */}
+                      {Math.round(data.height + 3.9)}"
+                      </div>
                     </div>
-                  </div>
-                  <div className="divTableRow">
-                    <div className="divTableCell">Battles</div>
-                    <div className="divTableCell">{data.game_indices.length}</div>
+                    <div className="divTableRow">
+                      <div className="divTableCell">Weight</div>
+                      <div className="divTableCell">{" "}
+                      {/* WHY is the weight measure like this...I had to look this up in the doucmentation */}
+                      {Math.round(data.height / 4.3)} lbs
+                      </div>
+                    </div>
+                    <div className="divTableRow">
+                      <div className="divTableCell">Battles</div>
+                      <div className="divTableCell">{data.game_indices.length}</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
+            );
         })}
-    </div>
+      </div>  
+   
   );
 }
 

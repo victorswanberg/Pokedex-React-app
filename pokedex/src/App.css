@@ -22,6 +22,12 @@ input {
   margin: 2rem auto;
 }
 
+ body {
+  background-image: url("https://mcdn.wallpapersafari.com/medium/39/21/AjeFdp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 /* Resources: https://divtable.com/ */
 .divTable {
